@@ -18,14 +18,12 @@ func main() {
 		To:         "user@example.com",
 		Subject:    "Welcome to Our Platform!",
 		TemplateID: xem.String("welcome-template"),
-		Data: []interface{}{
-			map[string]interface{}{
-				"name":     "John Doe",
-				"email":    "john@example.com",
-				"company":  "Acme Corp",
-				"role":     "Developer",
-				"joinDate": "2026-02-16",
-			},
+		Data: map[string]interface{}{
+			"name":     "John Doe",
+			"email":    "john@example.com",
+			"company":  "Acme Corp",
+			"role":     "Developer",
+			"joinDate": "2026-02-16",
 		},
 	})
 
@@ -49,7 +47,7 @@ func main() {
 		To:         "users@example.com",
 		Subject:    "Monthly Newsletter",
 		TemplateID: xem.String("newsletter-template"),
-		Data:       users,
+		Data:       map[string]interface{}{"users": users},
 	})
 
 	if err != nil {

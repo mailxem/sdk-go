@@ -5,7 +5,9 @@ type EmailProvider string
 
 const (
 	// EmailProviderCustom is the default custom provider
-	EmailProviderCustom EmailProvider = "CUSTOM"
+	EmailProviderCustom   EmailProvider = "CUSTOM"
+	EmailProviderSendGrid EmailProvider = "SENDGRID"
+	EmailProviderMailgun  EmailProvider = "AMAZON"
 )
 
 // SendEmailParams contains parameters for sending an email
@@ -23,7 +25,7 @@ type SendEmailParams struct {
 	TemplateID *string `json:"templateId,omitempty"`
 
 	// Data is the template data for dynamic content
-	Data []interface{} `json:"data,omitempty"`
+	Data map[string]interface{} `json:"data,omitempty"`
 
 	// BCC are the BCC recipients
 	BCC *string `json:"bcc,omitempty"`
