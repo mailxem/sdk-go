@@ -39,7 +39,7 @@ func (e *EmailResource) Send(params *SendEmailParams) (*SendEmailResponse, error
 
 	// Make API request
 	var result SendEmailResponse
-	err := e.client.post("/email", params, &result)
+	err := e.client.post("/emails", params, &result)
 	if err != nil {
 		return nil, err
 	}
