@@ -1,5 +1,7 @@
 # XEM Email SDK for Go
 
+[![Release](https://img.shields.io/github/v/release/mailxem/sdk-go)](https://github.com/mailxem/sdk-go/releases)
+
 Official Go SDK for the XEM Email API.
 
 ## Installation
